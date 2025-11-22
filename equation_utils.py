@@ -1,3 +1,4 @@
+from sympy import symbols, Eq, solve
 # Add the import statements for necessary sympy functions here
 
 
@@ -48,7 +49,7 @@ def build_equations(reactant_atoms, product_atoms):
 def my_solve(equations, coefficients):
     """Solves the system of equations for the coefficients of the reaction.  
     Example: For equations [2*a0 - 2*b0, a1 - b0], returns [1.0, 1.0]."""
-    solution = sympy_solve(equations, coefficients)
+    solution = solve(equations, coefficients)
 
     if len(solution) == len(coefficients):
         coefficient_values = list()
